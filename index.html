@@ -241,7 +241,7 @@
             <input type="text" id="user-input" placeholder="Type your message...">
             <button onclick="sendMessage()">Send</button>
             <!-- ปุ่มสำหรับอัปโหลดภาพ -->
-            <button onclick="triggerImageUpload()">📤 Upload</button> <!-- ใช้ไอคอน -->
+            <button onclick="triggerImageUpload()">Upload Image</button> <!-- ใช้ไอคอน -->
     <input type="file" id="image-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
         </div>
     </div>
@@ -654,7 +654,7 @@
             const chatLog = document.getElementById("chat-log");
             const typingIndicator = document.createElement("div");
             typingIndicator.classList.add("chat-message", "bot-message", "typing-indicator");
-            typingIndicator.textContent = "Analyzing image..."; // แสดงข้อความกำลังวิเคราะห์
+            typingIndicator.textContent = "Analyzing..."; // แสดงข้อความกำลังวิเคราะห์
             typingIndicator.id = "typing-indicator"; // ตั้ง ID เพื่อให้ลบออกง่าย
             chatLog.appendChild(typingIndicator);
             chatLog.scrollTop = chatLog.scrollHeight; // เลื่อนแชทไปด้านล่างสุด
