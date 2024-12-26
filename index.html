@@ -191,6 +191,36 @@
             text-align: center;
             font-size: 1.7rem;
         }
+        /* เพิ่ม CSS สำหรับหน้าจอขนาดเล็ก */
+    @media (max-width: 768px) {
+        .chat-input {
+            flex-wrap: wrap; /* จัดให้ปุ่มเลื่อนลงเมื่อพื้นที่ไม่พอ */
+            justify-content: center;
+        }
+
+        .chat-input input {
+            flex-basis: 100%; /* ให้ช่องป้อนข้อความกว้างเต็ม */
+            margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างช่องป้อนข้อความกับปุ่ม */
+        }
+
+        .chat-input button {
+            flex-basis: calc(50% - 10px); /* ปุ่มแต่ละอันใช้พื้นที่ 50% ของหน้าจอ */
+            margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+        }
+
+        #image-upload {
+            display: block; /* แสดงปุ่ม Upload บนมือถือ */
+        }
+    }
+
+    .chat-input button {
+        min-width: 120px; /* ขนาดขั้นต่ำของปุ่ม */
+    }
+
+    /* ปุ่มอัปโหลด */
+    #image-upload {
+        display: none; /* ซ่อนปุ่มแบบปกติ */
+    }
     </style>
 </head>
 
@@ -211,8 +241,8 @@
             <input type="text" id="user-input" placeholder="Type your message...">
             <button onclick="sendMessage()">Send</button>
             <!-- ปุ่มสำหรับอัปโหลดภาพ -->
-            <button onclick="triggerImageUpload()">Upload Image</button>
-            <input type="file" id="image-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
+            <button onclick="triggerImageUpload()">📤 Upload</button> <!-- ใช้ไอคอน -->
+    <input type="file" id="image-upload" accept="image/*" style="display: none;" onchange="previewImage(event)">
         </div>
     </div>
 
@@ -507,9 +537,9 @@
         }
         // ฟังก์ชันเรียก input file
         function triggerImageUpload() {
-            const fileInput = document.getElementById('image-upload');
-            fileInput.click(); // เปิดตัวเลือกไฟล์
-        }
+    const fileInput = document.getElementById('image-upload');
+    fileInput.click(); // เปิดตัวเลือกไฟล์
+}
 
         // ฟังก์ชันแสดงตัวอย่างภาพ
         function previewImage(event) {
